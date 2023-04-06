@@ -28,8 +28,25 @@ void createKnownSquareMatrix(int Size, int* squareMatrix, bool displayMatrices){
 			cout<<"\n";
 		}
 	}
-	
+}
 
+
+//creates a square matrix of dimensions Size X Size, with the values being the column number multiplied by two
+void createKnownSquareMatrixTimesTwo(int Size, int* squareMatrix, bool displayMatrices){
+
+	
+	for(int i = 0; i<Size; i++){
+		
+		for(int j = 0; j<Size; j++){
+			squareMatrix[i*Size+j] = 2*(j + 1);
+			if(displayMatrices){
+				cout<<squareMatrix[i*Size+j]<<"\t ";
+			}
+		}
+		if(displayMatrices){
+			cout<<"\n";
+		}
+	}
 }
 
 
@@ -82,7 +99,7 @@ int main(void)
 	int countB = Size*Size;
 	int matrixB[countB];
 	//createRandomSquareMatrix(Size,matrixB,displayMatrices);
-	createKnownSquareMatrix(Size,matrixB, displayMatrices);
+	createKnownSquareMatrixTimesTwo(Size,matrixB, displayMatrices);
 
 
 	cout<<"Number of elements in matrix 2: "<<countB<<"\n";
