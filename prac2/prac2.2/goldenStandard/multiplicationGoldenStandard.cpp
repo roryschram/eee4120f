@@ -9,7 +9,7 @@ using namespace std;
 
 
 //creates a square matrix of dimensions Size X Size, with the values being the column number
-void createKnownSquareMatrix(int Size, int* squareMatrix, bool displayMatrices){
+void createKnownSquareMatrix(int Size, long long* squareMatrix, bool displayMatrices){
 
 	
 	for(int i = 0; i<Size; i++){
@@ -24,8 +24,24 @@ void createKnownSquareMatrix(int Size, int* squareMatrix, bool displayMatrices){
 			cout<<"\n";
 		}
 	}
-	
+}
 
+//creates a square matrix of dimensions Size X Size, with the values being the column number multiplied by two
+void createKnownSquareMatrixTimesTwo(int Size, long long* squareMatrix, bool displayMatrices){
+
+	
+	for(int i = 0; i<Size; i++){
+		
+		for(int j = 0; j<Size; j++){
+			squareMatrix[i*Size+j] = 2*(j + 1);
+			if(displayMatrices){
+				cout<<squareMatrix[i*Size+j]<<"\t ";
+			}
+		}
+		if(displayMatrices){
+			cout<<"\n";
+		}
+	}
 }
 
 
@@ -58,71 +74,67 @@ int main(void){
 
 	//New code for prac 2.2
 	bool displayMatrices = true;
-	int Size = 3;
+	int Size = 100;
 	int countA = Size*Size;
-	int matrixA[countA];
-	createKnownSquareMatrix(Size,matrixA, false);
-	if(displayMatrices){
-		for(int i = 0; i<Size; i++){
-			for(int j = 0; j<Size; j++){
-					cout<<matrixA[i*Size+j]<<"\t ";
-				
-			}
-			
-			cout<<"\n";
-			
-		}
-	}
+	long long matrixA[countA];
+	createKnownSquareMatrix(Size,matrixA, displayMatrices);
+	
 	cout<<"Number of elements in matrix 1: "<<countA<<"\n";
 	cout<<"Dimensions of matrix 1: "<<Size<<"x"<<Size<<"\n";
 	cout<<"Matrix 1 pointer: "<<matrixA<<"\n";
-	
-
-	
+	printf("\n");
 	
 	int countB = Size*Size;
-	int matrixB[countB];
-	createKnownSquareMatrix(Size, matrixB, false);
-	for(int g = 0; g<countB; g++){
-		matrixB[g] = 2*matrixB[g];
-	}
-	if(displayMatrices){
-		for(int i = 0; i<Size; i++){
-			for(int j = 0; j<Size; j++){
-					cout<<matrixB[i*Size+j]<<"\t ";
-				
-			}
-			
-			cout<<"\n";
-			
-		}
-	}
+	long long matrixB[countB];
+	createKnownSquareMatrixTimesTwo(Size, matrixB, displayMatrices);
+	
 	cout<<"Number of elements in matrix 2: "<<countB<<"\n";
 	cout<<"Dimensions of matrix 2: "<<Size<<"x"<<Size<<"\n";
 	cout<<"Matrix 2 pointer: "<<matrixB<<"\n";
 	
 	
 	
-	int output[countA];
+	long long output[countA];
 	
 	//TODO: code your golden standard matrix multiplication here
-	int result = 0;
+	long long result = 0;
+	int index = 0;
+	
+	
+	for (int row = 1; row <= Size; row++) {
+		for (int col = 1; col <= Size; col++) {
+			index = (row*Size + col) - (Size + 1);
+			for (int i = 1; i <= Size; i++) {
+				result += matrixA[(row*Size + i) - (Size + 1)]*matrixB[(i*Size + col) - (Size + 1)];
+			}
+			output[index] = result;
+			result = 0;
+		}
+	}
 
+
+	long long outputFinal[countA];
+	result = 0;
+	index = 0;
 	
-	
-	for (int j = 1; j <= Size; j++) {
-		result += matrixA[(row*Size + j) - (Size + 1)]*matrixB[(j*Size + col) - (Size + 1)];
+	for (int row = 1; row <= Size; row++) {
+		for (int col = 1; col <= Size; col++) {
+			index = (row*Size + col) - (Size + 1);
+			for (int i = 1; i <= Size; i++) {
+				result += matrixA[(row*Size + i) - (Size + 1)]*output[(i*Size + col) - (Size + 1)];
+			}
+			outputFinal[index] = result;
+			result = 0;
+		}
 	}
 		
 		
-	
-	
-	
+
 	//This if statement will display the matrix in output	
 	if(displayMatrices){
 		printf("\nOutput in the output_buffer \n");
 		for(int j=0; j<countA; j++) {
-			printf("%i \t " ,output[j]);
+			printf("%lli \t " ,outputFinal[j]);
 			if(j%Size == (Size-1)){
 				printf("\n");
 			}

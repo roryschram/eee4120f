@@ -82,7 +82,7 @@ int main(void)
 
 	//New code for prac 2.2
 	bool displayMatrices = true;
-	int Size = 3;
+	int Size = 100;
 
 
 	int countA = Size*Size;
