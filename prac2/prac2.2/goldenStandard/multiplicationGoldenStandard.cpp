@@ -1,6 +1,5 @@
 
 //Author: Christopher Hill For the EEE4120F course at UCT
-
 #include<stdio.h>
 #include<iostream>
 
@@ -9,7 +8,7 @@ using namespace std;
 
 
 //creates a square matrix of dimensions Size X Size, with the values being the column number
-void createKnownSquareMatrix(int Size, unsigned long* squareMatrix, bool displayMatrices){
+void createKnownSquareMatrix(int Size, long* squareMatrix, bool displayMatrices){
 
 	
 	for(int i = 0; i<Size; i++){
@@ -27,7 +26,7 @@ void createKnownSquareMatrix(int Size, unsigned long* squareMatrix, bool display
 }
 
 //creates a square matrix of dimensions Size X Size, with the values being the column number multiplied by two
-void createKnownSquareMatrixTimesTwo(int Size, unsigned long* squareMatrix, bool displayMatrices){
+void createKnownSquareMatrixTimesTwo(int Size, long* squareMatrix, bool displayMatrices){
 
 	
 	for(int i = 0; i<Size; i++){
@@ -69,14 +68,11 @@ void createRandomSquareMatrix(int Size, int* squareMatrix, bool displayMatrices)
 
 
 int main(void){
-
-
-
 	//New code for prac 2.2
 	bool displayMatrices = true;
-	int Size = 60;
+	int Size = 20;
 	int countA = Size*Size;
-	unsigned long matrixA[countA];
+	long matrixA[countA];
 	createKnownSquareMatrix(Size,matrixA, displayMatrices);
 	
 	cout<<"Number of elements in matrix 1: "<<countA<<"\n";
@@ -85,7 +81,7 @@ int main(void){
 	printf("\n");
 	
 	int countB = Size*Size;
-	unsigned long matrixB[countB];
+	long matrixB[countB];
 	createKnownSquareMatrixTimesTwo(Size, matrixB, displayMatrices);
 	
 	cout<<"Number of elements in matrix 2: "<<countB<<"\n";
@@ -94,10 +90,10 @@ int main(void){
 	
 	
 	
-	unsigned long output[countA];
+	long output[countA];
 	
 	//TODO: code your golden standard matrix multiplication here
-	ulong result = 0;
+	long result = 0;
 	int index = 0;
 	
 	
@@ -113,7 +109,7 @@ int main(void){
 	}
 
 
-	unsigned long outputFinal[countA];
+	long outputFinal[countA];
 	result = 0;
 	index = 0;
 	
@@ -130,24 +126,24 @@ int main(void){
 		
 		
 
-	// //This if statement will display the matrix in output	
-	// if(displayMatrices){
-	// 	printf("\nOutput in the output_buffer \n");
-	// 	for(int j=0; j<countA; j++) {
-	// 		printf("%li \t " ,outputFinal[j]);
-	// 		if(j%Size == (Size-1)){
-	// 			printf("\n");
-	// 		}
-	// 	}
-	// }
-
 	//This if statement will display the matrix in output	
 	if(displayMatrices){
 		printf("\nOutput in the output_buffer \n");
 		for(int j=0; j<countA; j++) {
-			printf("%li\n" ,outputFinal[j]);
+			printf("%li \t " ,outputFinal[j]);
+			if(j%Size == (Size-1)){
+				printf("\n");
+			}
 		}
 	}
+
+	// //This if statement will display the matrix in output	
+	// if(displayMatrices){
+	// 	printf("\nOutput in the output_buffer \n");
+	// 	for(int j=0; j<countA; j++) {
+	// 		printf("%li\n" ,outputFinal[j]);
+	// 	}
+	// }
 	
 	return 0;
 }
