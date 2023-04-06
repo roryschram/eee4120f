@@ -13,7 +13,7 @@ using namespace std;
 
 
 //creates a square matrix of dimensions Size X Size, with the values being the column number
-void createKnownSquareMatrix(int Size, long* squareMatrix, bool displayMatrices){
+void createKnownSquareMatrix(int Size, cl_ulong* squareMatrix, bool displayMatrices){
 	for(int i = 0; i<Size; i++){
 		
 		for(int j = 0; j<Size; j++){
@@ -30,7 +30,7 @@ void createKnownSquareMatrix(int Size, long* squareMatrix, bool displayMatrices)
 
 
 //creates a square matrix of dimensions Size X Size, with the values being the column number multiplied by two
-void createKnownSquareMatrixTimesTwo(int Size, long* squareMatrix, bool displayMatrices){
+void createKnownSquareMatrixTimesTwo(int Size, cl_ulong* squareMatrix, bool displayMatrices){
 	for(int i = 0; i<Size; i++){
 		
 		for(int j = 0; j<Size; j++){
@@ -75,12 +75,12 @@ int main(void)
 	bool displayMatrices = true;
 
 	// Size of the matrices to be multiplied
-	int Size = 3;
+	int Size = 60;
 
 
 	// Here we define matrix A
 	int countA = Size*Size;
-	long matrixA[countA];
+	cl_ulong matrixA[countA];
 
 	createKnownSquareMatrix(Size,matrixA, displayMatrices);
 	cout<<"Number of elements in matrix 1: "<<countA<<"\n";
@@ -91,7 +91,7 @@ int main(void)
 
 	// Here we define matrix A
 	int countB = Size*Size;
-	long matrixB[countB];
+	cl_ulong matrixB[countB];
 	createKnownSquareMatrixTimesTwo(Size,matrixB, displayMatrices);
 	cout<<"Number of elements in matrix 2: "<<countB<<"\n";
 	cout<<"Dimensions of matrix 2: "<<Size<<"x"<<Size<<"\n";
@@ -175,13 +175,13 @@ int main(void)
 	cl_int num_groups = global_size/local_size; //number of work groups needed
 
 	// Initialize output array
-	long output[global_size]; //output array
+	cl_ulong output[global_size]; //output array
 	
 	// Create matrixA_buffer, matrixB_buffer and output_buffer, with clCreateBuffer()
 
-	matrixA_buffer = clCreateBuffer(context,CL_MEM_READ_ONLY | CL_MEM_COPY_HOST_PTR, countA*sizeof(long), &matrixA, &err);
-	matrixB_buffer = clCreateBuffer(context,CL_MEM_READ_ONLY | CL_MEM_COPY_HOST_PTR, countB*sizeof(long), &matrixB, &err);
-	output_buffer = clCreateBuffer(context,CL_MEM_READ_WRITE | CL_MEM_COPY_HOST_PTR, global_size*sizeof(long), output, &err);
+	matrixA_buffer = clCreateBuffer(context,CL_MEM_READ_ONLY | CL_MEM_COPY_HOST_PTR, countA*sizeof(cl_ulong), &matrixA, &err);
+	matrixB_buffer = clCreateBuffer(context,CL_MEM_READ_ONLY | CL_MEM_COPY_HOST_PTR, countB*sizeof(cl_ulong), &matrixB, &err);
+	output_buffer = clCreateBuffer(context,CL_MEM_READ_WRITE | CL_MEM_COPY_HOST_PTR, global_size*sizeof(cl_ulong), output, &err);
 	size_buffer = clCreateBuffer(context,CL_MEM_READ_ONLY | CL_MEM_COPY_HOST_PTR,sizeof(int), &Size, &err);
 
 
@@ -205,14 +205,22 @@ int main(void)
 	clFinish(queue);
 	
 	
+	// // Check that the host was able to retrieve the output data from the output buffer
+	// if(displayMatrices){
+	// 	printf("\nOutput in the output buffer \n");
+	// 	for(int j=0; j<countA; j++) {
+	// 		printf("%li \t " ,output[j]);
+	// 		if(j%Size == (Size-1)){
+	// 			printf("\n");
+	// 		}
+	// 	}
+	// }
+
 	// Check that the host was able to retrieve the output data from the output buffer
 	if(displayMatrices){
 		printf("\nOutput in the output buffer \n");
 		for(int j=0; j<countA; j++) {
-			printf("%li \t " ,output[j]);
-			if(j%Size == (Size-1)){
-				printf("\n");
-			}
+			printf("%li \n" ,output[j]);
 		}
 	}
 
