@@ -68,14 +68,15 @@ void createRandomSquareMatrix(int Size, int* squareMatrix, bool displayMatrices)
 
 int main(void)
 {
-
 	clock_t start, end;  //Timers
 
+	start = clock();
+
 	//New code for prac 2.2
-	bool displayMatrices = true;
+	bool displayMatrices = false;
 
 	// Size of the matrices to be multiplied
-	int Size = 20;
+	int Size = 50;
 
 
 	// Here we define matrix A
@@ -192,8 +193,10 @@ int main(void)
 	clSetKernelArg(kernel, 3, sizeof(cl_mem), &size_buffer);
 
 	
-	
+	end = clock();
+	float dataTransferTime = ((float) end - start)/CLOCKS_PER_SEC;
 
+	start = clock();
 	// Enqueue kernel, deploys the kernels and determines the number of work-items that should be generated to execute the kernel (global_size) and the number of work-items in each work-group (local_size).
 	cl_int err4 = clEnqueueNDRangeKernel(queue, kernel, 1, NULL, &global_size, &local_size, 0, NULL, NULL); 
 	printf("Kernel check: %i \n",err4);
@@ -203,6 +206,10 @@ int main(void)
 	
 	//This command stops the program here until everything in the queue has been run
 	clFinish(queue);
+
+	end = clock();
+
+	float computeTime = ((float) end - start)/CLOCKS_PER_SEC;
 	
 	
 	// Check that the host was able to retrieve the output data from the output buffer
@@ -233,5 +240,8 @@ int main(void)
 	clReleaseProgram(program);
 	clReleaseContext(context);
 
+
+	printf("\nData Transfer Overhead: %0.8f sec\n",dataTransferTime);
+	printf("Compute Time: %0.8f sec\n",computeTime);
 	return 0;
 }
