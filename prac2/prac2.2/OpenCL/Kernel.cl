@@ -22,6 +22,14 @@ __kernel void matrixMultiplication(__global int* matrixA, __global int* matrixB,
 	output[workItemNum] = result;
 	//printf("Work Item: %d\n",workItemNum);
 	//printf("%d\n",matrixB[index]);
-
 	barrier(CLK_LOCAL_MEM_FENCE);
+
+	result = 0;
+	for (int i = 1; i <= size; i++) {
+		result += matrixA[(row*size + i) - (size + 1)]*output[(i*size + col) - (size + 1)];
+	}
+
+	output[workItemNum] = result;
+
+
 }
