@@ -70,14 +70,11 @@ int main(void)
 {
 	clock_t start, end;  //Timers
 
-	start = clock();
-
 	//New code for prac 2.2
 	bool displayMatrices = false;
 
 	// Size of the matrices to be multiplied
-	int Size = 50;
-
+	int Size = 400;
 
 	// Here we define matrix A
 	int countA = Size*Size;
@@ -170,6 +167,8 @@ int main(void)
 	cl_command_queue queue = clCreateCommandQueueWithProperties(context, device, 0, NULL);
 
 
+	start = clock();
+
 	// Create data buffers for memory management between the host and the target device
 	size_t global_size = Size*Size; //total number of work items
 	size_t local_size = Size; //Size of each work group
@@ -210,6 +209,7 @@ int main(void)
 	end = clock();
 
 	float computeTime = ((float) end - start)/CLOCKS_PER_SEC;
+	float totalTime = dataTransferTime+computeTime;
 	
 	
 	// Check that the host was able to retrieve the output data from the output buffer
@@ -243,5 +243,6 @@ int main(void)
 
 	printf("\nData Transfer Overhead: %0.8f sec\n",dataTransferTime);
 	printf("Compute Time: %0.8f sec\n",computeTime);
+	printf("Total Time: %0.8f sec\n",totalTime);
 	return 0;
 }

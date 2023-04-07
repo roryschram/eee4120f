@@ -73,7 +73,7 @@ int main(void){
 
 	//New code for prac 2.2
 	bool displayMatrices = false;
-	int Size = 50;
+	int Size = 3;
 	int countA = Size*Size;
 	long matrixA[countA];
 	createKnownSquareMatrix(Size,matrixA, displayMatrices);
@@ -129,7 +129,7 @@ int main(void){
 		}
 	}
 		
-		
+	end = clock();
 
 	//This if statement will display the matrix in output	
 	if(displayMatrices){
@@ -150,7 +150,7 @@ int main(void){
 	// 	}
 	// }
 	
-	end = clock();
+
 
 	printf("\nCompute Time: %0.8f sec\n",((float) end - start)/CLOCKS_PER_SEC);
 	return 0;
