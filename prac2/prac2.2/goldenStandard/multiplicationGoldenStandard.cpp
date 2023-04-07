@@ -8,7 +8,7 @@ using namespace std;
 
 
 //creates a square matrix of dimensions Size X Size, with the values being the column number
-void createKnownSquareMatrix(int Size, long* squareMatrix, bool displayMatrices){
+void createKnownSquareMatrix(int Size, long long* squareMatrix, bool displayMatrices){
 
 	
 	for(int i = 0; i<Size; i++){
@@ -26,7 +26,7 @@ void createKnownSquareMatrix(int Size, long* squareMatrix, bool displayMatrices)
 }
 
 //creates a square matrix of dimensions Size X Size, with the values being the column number multiplied by two
-void createKnownSquareMatrixTimesTwo(int Size, long* squareMatrix, bool displayMatrices){
+void createKnownSquareMatrixTimesTwo(int Size, long long* squareMatrix, bool displayMatrices){
 
 	
 	for(int i = 0; i<Size; i++){
@@ -72,10 +72,10 @@ int main(void){
 	clock_t start, end;  //Timers
 
 	//New code for prac 2.2
-	bool displayMatrices = false;
+	bool displayMatrices = true;
 	int Size = 3;
 	int countA = Size*Size;
-	long matrixA[countA];
+	long long matrixA[countA];
 	createKnownSquareMatrix(Size,matrixA, displayMatrices);
 	
 	cout<<"Number of elements in matrix 1: "<<countA<<"\n";
@@ -84,7 +84,7 @@ int main(void){
 	printf("\n");
 	
 	int countB = Size*Size;
-	long matrixB[countB];
+	long long matrixB[countB];
 	createKnownSquareMatrixTimesTwo(Size, matrixB, displayMatrices);
 	
 	cout<<"Number of elements in matrix 2: "<<countB<<"\n";
@@ -93,10 +93,10 @@ int main(void){
 	
 	
 	
-	long output[countA];
+	long long output[countA];
 	
 	//TODO: code your golden standard matrix multiplication here
-	long result = 0;
+	long long result = 0;
 	int index = 0;
 
 	start = clock();
@@ -114,7 +114,7 @@ int main(void){
 	}
 
 
-	long outputFinal[countA];
+	long long outputFinal[countA];
 	result = 0;
 	index = 0;
 	
@@ -135,7 +135,7 @@ int main(void){
 	if(displayMatrices){
 		printf("\nOutput in the output_buffer \n");
 		for(int j=0; j<countA; j++) {
-			printf("%li \t " ,outputFinal[j]);
+			printf("%lli \t " ,outputFinal[j]);
 			if(j%Size == (Size-1)){
 				printf("\n");
 			}

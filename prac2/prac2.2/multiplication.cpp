@@ -71,10 +71,10 @@ int main(void)
 	clock_t start, end;  //Timers
 
 	//New code for prac 2.2
-	bool displayMatrices = false;
+	bool displayMatrices = true;
 
 	// Size of the matrices to be multiplied
-	int Size = 400;
+	int Size = 3;
 
 	// Here we define matrix A
 	int countA = Size*Size;
