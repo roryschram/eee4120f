@@ -1,0 +1,5 @@
+﻿Number of Samples;Execution time of Method 1 (ms);Execution time of Method 2 (ms);Speed-up;;Sample
+1 x 48000;93.4;116.8;1.25;;48000
+10 x 48000;77.6;272.2;3.51;;480000
+100 x 48000;82.4;2349;28.5;;4800000
+1000 x 48000;77.8;20245;260.22;;48000000
