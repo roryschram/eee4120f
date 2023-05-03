@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Thu Apr 27 10:50:00 2023
+# Process ID: 8185
+# Current directory: /home/SLDNAT001/Desktop/Xilinx/practical_3/practical_3.runs/sine_mid_synth_1
+# Command line: vivado -log sine_mid.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source sine_mid.tcl
+# Log file: /home/SLDNAT001/Desktop/Xilinx/practical_3/practical_3.runs/sine_mid_synth_1/sine_mid.vds
+# Journal file: /home/SLDNAT001/Desktop/Xilinx/practical_3/practical_3.runs/sine_mid_synth_1/vivado.jou
+#-----------------------------------------------------------
+source sine_mid.tcl -notrace

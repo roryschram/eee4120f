@@ -1,0 +1,263 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Thu Apr 27 10:50:00 2023
+# Process ID: 8185
+# Current directory: /home/SLDNAT001/Desktop/Xilinx/practical_3/practical_3.runs/sine_mid_synth_1
+# Command line: vivado -log sine_mid.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source sine_mid.tcl
+# Log file: /home/SLDNAT001/Desktop/Xilinx/practical_3/practical_3.runs/sine_mid_synth_1/sine_mid.vds
+# Journal file: /home/SLDNAT001/Desktop/Xilinx/practical_3/practical_3.runs/sine_mid_synth_1/vivado.jou
+#-----------------------------------------------------------
+source sine_mid.tcl -notrace
+Command: synth_design -top sine_mid -part xc7a100tcsg324-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 8277
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2526.691 ; gain = 0.000 ; free physical = 132 ; free virtual = 68931
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'sine_mid' [/home/SLDNAT001/Desktop/Xilinx/practical_3/practical_3.gen/sources_1/ip/sine_mid/synth/sine_mid.vhd:70]
+WARNING: [Synth 8-5640] Port 'debug_axi_pinc_in' is missing in component declaration [/home/SLDNAT001/Desktop/Xilinx/practical_3/practical_3.gen/sources_1/ip/sine_mid/synth/sine_mid.vhd:73]
+WARNING: [Synth 8-5640] Port 'debug_axi_poff_in' is missing in component declaration [/home/SLDNAT001/Desktop/Xilinx/practical_3/practical_3.gen/sources_1/ip/sine_mid/synth/sine_mid.vhd:73]
+WARNING: [Synth 8-5640] Port 'debug_axi_resync_in' is missing in component declaration [/home/SLDNAT001/Desktop/Xilinx/practical_3/practical_3.gen/sources_1/ip/sine_mid/synth/sine_mid.vhd:73]
+WARNING: [Synth 8-5640] Port 'debug_axi_chan_in' is missing in component declaration [/home/SLDNAT001/Desktop/Xilinx/practical_3/practical_3.gen/sources_1/ip/sine_mid/synth/sine_mid.vhd:73]
+WARNING: [Synth 8-5640] Port 'debug_core_nd' is missing in component declaration [/home/SLDNAT001/Desktop/Xilinx/practical_3/practical_3.gen/sources_1/ip/sine_mid/synth/sine_mid.vhd:73]
+WARNING: [Synth 8-5640] Port 'debug_phase' is missing in component declaration [/home/SLDNAT001/Desktop/Xilinx/practical_3/practical_3.gen/sources_1/ip/sine_mid/synth/sine_mid.vhd:73]
+WARNING: [Synth 8-5640] Port 'debug_phase_nd' is missing in component declaration [/home/SLDNAT001/Desktop/Xilinx/practical_3/practical_3.gen/sources_1/ip/sine_mid/synth/sine_mid.vhd:73]
+	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
+	Parameter C_MODE_OF_OPERATION bound to: 0 - type: integer 
+	Parameter C_MODULUS bound to: 9 - type: integer 
+	Parameter C_ACCUMULATOR_WIDTH bound to: 8 - type: integer 
+	Parameter C_CHANNELS bound to: 1 - type: integer 
+	Parameter C_HAS_PHASE_OUT bound to: 0 - type: integer 
+	Parameter C_HAS_PHASEGEN bound to: 0 - type: integer 
+	Parameter C_HAS_SINCOS bound to: 1 - type: integer 
+	Parameter C_LATENCY bound to: 2 - type: integer 
+	Parameter C_MEM_TYPE bound to: 1 - type: integer 
+	Parameter C_NEGATIVE_COSINE bound to: 0 - type: integer 
+	Parameter C_NEGATIVE_SINE bound to: 0 - type: integer 
+	Parameter C_NOISE_SHAPING bound to: 0 - type: integer 
+	Parameter C_OUTPUTS_REQUIRED bound to: 0 - type: integer 
+	Parameter C_OUTPUT_FORM bound to: 0 - type: integer 
+	Parameter C_OUTPUT_WIDTH bound to: 18 - type: integer 
+	Parameter C_PHASE_ANGLE_WIDTH bound to: 8 - type: integer 
+	Parameter C_PHASE_INCREMENT bound to: 2 - type: integer 
+	Parameter C_PHASE_INCREMENT_VALUE bound to: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 - type: string 
+	Parameter C_RESYNC bound to: 0 - type: integer 
+	Parameter C_PHASE_OFFSET bound to: 0 - type: integer 
+	Parameter C_PHASE_OFFSET_VALUE bound to: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 - type: string 
+	Parameter C_OPTIMISE_GOAL bound to: 0 - type: integer 
+	Parameter C_USE_DSP48 bound to: 0 - type: integer 
+	Parameter C_POR_MODE bound to: 0 - type: integer 
+	Parameter C_AMPLITUDE bound to: 0 - type: integer 
+	Parameter C_HAS_ACLKEN bound to: 0 - type: integer 
+	Parameter C_HAS_ARESETN bound to: 1 - type: integer 
+	Parameter C_HAS_TLAST bound to: 0 - type: integer 
+	Parameter C_HAS_TREADY bound to: 0 - type: integer 
+	Parameter C_HAS_S_PHASE bound to: 1 - type: integer 
+	Parameter C_S_PHASE_TDATA_WIDTH bound to: 8 - type: integer 
+	Parameter C_S_PHASE_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_S_PHASE_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_S_CONFIG bound to: 0 - type: integer 
+	Parameter C_S_CONFIG_SYNC_MODE bound to: 0 - type: integer 
+	Parameter C_S_CONFIG_TDATA_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_M_DATA bound to: 1 - type: integer 
+	Parameter C_M_DATA_TDATA_WIDTH bound to: 24 - type: integer 
+	Parameter C_M_DATA_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_M_DATA_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_M_PHASE bound to: 0 - type: integer 
+	Parameter C_M_PHASE_TDATA_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_PHASE_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_M_PHASE_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_DEBUG_INTERFACE bound to: 0 - type: integer 
+	Parameter C_CHAN_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'dds_compiler_v6_0_21' declared at '/home/SLDNAT001/Desktop/Xilinx/practical_3/practical_3.gen/sources_1/ip/sine_mid/hdl/dds_compiler_v6_0_vh_rfs.vhd:47308' bound to instance 'U0' of component 'dds_compiler_v6_0_21' [/home/SLDNAT001/Desktop/Xilinx/practical_3/practical_3.gen/sources_1/ip/sine_mid/synth/sine_mid.vhd:177]
+INFO: [Synth 8-256] done synthesizing module 'sine_mid' (7#1) [/home/SLDNAT001/Desktop/Xilinx/practical_3/practical_3.gen/sources_1/ip/sine_mid/synth/sine_mid.vhd:70]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2526.691 ; gain = 0.000 ; free physical = 1072 ; free virtual = 69674
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2526.691 ; gain = 0.000 ; free physical = 1066 ; free virtual = 69669
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2526.691 ; gain = 0.000 ; free physical = 1066 ; free virtual = 69669
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2526.691 ; gain = 0.000 ; free physical = 1062 ; free virtual = 69665
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/SLDNAT001/Desktop/Xilinx/practical_3/practical_3.gen/sources_1/ip/sine_mid/sine_mid_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [/home/SLDNAT001/Desktop/Xilinx/practical_3/practical_3.gen/sources_1/ip/sine_mid/sine_mid_ooc.xdc] for cell 'U0'
+Parsing XDC File [/home/SLDNAT001/Desktop/Xilinx/practical_3/practical_3.runs/sine_mid_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/SLDNAT001/Desktop/Xilinx/practical_3/practical_3.runs/sine_mid_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2590.504 ; gain = 0.000 ; free physical = 955 ; free virtual = 69572
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2590.504 ; gain = 0.000 ; free physical = 955 ; free virtual = 69572
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2590.504 ; gain = 63.812 ; free physical = 1025 ; free virtual = 69642
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2590.504 ; gain = 63.812 ; free physical = 1025 ; free virtual = 69643
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for U0. (constraint file  /home/SLDNAT001/Desktop/Xilinx/practical_3/practical_3.runs/sine_mid_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2590.504 ; gain = 63.812 ; free physical = 1028 ; free virtual = 69646
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2590.504 ; gain = 63.812 ; free physical = 1017 ; free virtual = 69639
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2590.504 ; gain = 63.812 ; free physical = 997 ; free virtual = 69626
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2590.504 ; gain = 63.812 ; free physical = 875 ; free virtual = 69515
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2590.504 ; gain = 63.812 ; free physical = 874 ; free virtual = 69515
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2590.504 ; gain = 63.812 ; free physical = 870 ; free virtual = 69511
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2590.504 ; gain = 63.812 ; free physical = 869 ; free virtual = 69510
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2590.504 ; gain = 63.812 ; free physical = 869 ; free virtual = 69510
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2590.504 ; gain = 63.812 ; free physical = 869 ; free virtual = 69510
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2590.504 ; gain = 63.812 ; free physical = 869 ; free virtual = 69510
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2590.504 ; gain = 63.812 ; free physical = 869 ; free virtual = 69510
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2590.504 ; gain = 63.812 ; free physical = 869 ; free virtual = 69510
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |LUT1     |     2|
+|2     |LUT2     |     4|
+|3     |LUT3     |     8|
+|4     |LUT4     |     1|
+|5     |RAMB18E1 |     1|
+|6     |FDRE     |    15|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2590.504 ; gain = 63.812 ; free physical = 869 ; free virtual = 69510
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2590.504 ; gain = 0.000 ; free physical = 927 ; free virtual = 69568
+Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2590.504 ; gain = 63.812 ; free physical = 927 ; free virtual = 69568
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2590.504 ; gain = 0.000 ; free physical = 916 ; free virtual = 69560
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2590.504 ; gain = 0.000 ; free physical = 946 ; free virtual = 69592
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: fbd5ee8a
+INFO: [Common 17-83] Releasing license: Synthesis
+17 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:17 . Memory (MB): peak = 2590.504 ; gain = 64.031 ; free physical = 1093 ; free virtual = 69739
+INFO: [Common 17-1381] The checkpoint '/home/SLDNAT001/Desktop/Xilinx/practical_3/practical_3.runs/sine_mid_synth_1/sine_mid.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP sine_mid, cache-ID = 31c3bbd2ff6a5470
+INFO: [Coretcl 2-1174] Renamed 9 cell refs.
+INFO: [Common 17-1381] The checkpoint '/home/SLDNAT001/Desktop/Xilinx/practical_3/practical_3.runs/sine_mid_synth_1/sine_mid.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file sine_mid_utilization_synth.rpt -pb sine_mid_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Apr 27 10:50:25 2023...

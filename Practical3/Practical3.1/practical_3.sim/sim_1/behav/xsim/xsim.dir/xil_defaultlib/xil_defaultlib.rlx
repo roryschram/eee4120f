@@ -1,0 +1,13 @@
+0.7
+2020.2
+Jun 10 2021
+19:45:28
+/home/SLDNAT001/Desktop/Xilinx/practical_3/practical_3.gen/sources_1/ip/sine_high/sim/sine_high.vhd,1682585255,vhdl,,,,sine_high,,,,,,,,
+/home/SLDNAT001/Desktop/Xilinx/practical_3/practical_3.gen/sources_1/ip/sine_low/sim/sine_low.vhd,1682585473,vhdl,,,,sine_low,,,,,,,,
+/home/SLDNAT001/Desktop/Xilinx/practical_3/practical_3.gen/sources_1/ip/sine_mid/sim/sine_mid.vhd,1682585398,vhdl,,,,sine_mid,,,,,,,,
+/home/SLDNAT001/Desktop/Xilinx/practical_3/practical_3.sim/sim_1/behav/xsim/glbl.v,1623370582,verilog,,,,glbl,,,,,,,,
+/home/SLDNAT001/Desktop/Xilinx/ug937-design-files/sim/testbench.v,1409910528,verilog,,,,testbench,,,,,,,,
+/home/SLDNAT001/Desktop/Xilinx/ug937-design-files/sources/debounce.vhd,1409910528,vhdl,,,,debounce,,,,,,,,
+/home/SLDNAT001/Desktop/Xilinx/ug937-design-files/sources/fsm.vhd,1409910528,vhdl,,,,fsm,,,,,,,,
+/home/SLDNAT001/Desktop/Xilinx/ug937-design-files/sources/sinegen.vhd,1682589232,vhdl,,,,sinegen,,,,,,,,
+/home/SLDNAT001/Desktop/Xilinx/ug937-design-files/sources/sinegen_demo.vhd,1409910530,vhdl,,,,sinegen_demo,,,,,,,,
